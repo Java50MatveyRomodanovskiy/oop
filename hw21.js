@@ -24,8 +24,8 @@ class Company{
     }
 
     getEmployeesCountry(country){
-        const res = [];
         const temp = Object.entries(this.#employees);
+        const res = [];
         temp.forEach(empl => {
             if (empl[1].country == country){
                 res.push(empl);
@@ -37,13 +37,7 @@ class Company{
     getEmployeesByAge(age){
         const date =  new Date().getFullYear();
         const birthYear = date - age;
-        const temp = Object.entries(this.#employees);
-        const res = [];
-        temp.forEach(empl => {
-            if (empl[1].birthYear === birthYear){
-                res.push(empl);
-            }
-        });
+        const res = Object.values(this.#employees).filter(empl => (empl.birthYear === birthYear));
         return res;
     }
 
@@ -117,11 +111,11 @@ emplByCountry.forEach(element => {
     console.log(element[1]);
 });
 
-//country
+//Age
 const emplByAge = firm.getEmployeesByAge(23);
 console.log("Employee age = 23")
 emplByAge.forEach(element => {
-    console.log(element[1]);
+    console.log(element);
 });
 
 //getEmployeesBySararies
@@ -144,3 +138,4 @@ emplBySalary = firm.getEmployeesBySararies(14999, 15500);
 emplBySalary.forEach(element => {
     console.log(element[1]);
 });
+
