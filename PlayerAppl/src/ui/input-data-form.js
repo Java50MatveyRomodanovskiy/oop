@@ -1,4 +1,5 @@
 import { videoConfig } from "../config/config.js";
+import { checkTime } from "../service/checkTime.js";
 
 export class DataForm {
     #formElement;
@@ -41,7 +42,7 @@ export class DataForm {
 addFormHandler(handlerFun) {
     this.#formElement.addEventListener('submit', (event) => {
     event.preventDefault(); //canceling default handler of "submit"
-    if (this.#inputElement.value >= videoConfig.minTime && this.#inputElement.value <= videoConfig.maxTime){
+    if (checkTime(this.#inputElement.value) === ''){
         const playData = [];
         playData.push(this.#inputElement.value);
         playData.push(this.#selectElement.value);
@@ -51,7 +52,7 @@ addFormHandler(handlerFun) {
         handlerFun(playData);
     }
     else {
-        alert(`playpack time should be from ${videoConfig.minTime} to ${videoConfig.maxTime} sec.`);
+        alert(checkTime(this.#inputElement.value));
     }
 });
 
