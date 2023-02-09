@@ -19,6 +19,7 @@ export class VideoPlayer {
     stopPlayer(){
         this.#videoElement.pause();
         this.#videoElement.currentTime = 0;
+        this.#videoElement.src = '';
     }
 
 }
