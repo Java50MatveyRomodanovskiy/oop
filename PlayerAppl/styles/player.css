@@ -19,6 +19,9 @@ body {
     justify-content: center;
 }
 .video-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 60vh;
 }
 
@@ -47,44 +50,28 @@ button {
 }
 
 @media (min-width: 560px) {
-    .form-select-group {
-        
-        font-size: 1.3em;
-        width: 50vw
+    #input-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3vh;
     }
-
     .two-inputs {
         display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: space-around;
-        width: 80vw;
-        height: auto
-    }
-
-    .form-select {
-        width: 30vw;
-        font-size: 1em;
-    }
-
-    .form-buttons {
-        display: flex;
-        justify-content: space-around;
-        width: 80%
-    }
-
-    .button-menu {
-        width: 20vw;
-        font-size: 1em;
-
-    }
-
-    .form-input {
-        width: 30vw;
+        height: 6vh;
+        width: 50vw;
         font-size: 1.3em;
     }
-
-    .button-menu+.button-menu {
-        margin-left: 20vw;
+    #video {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 5vh;
+        margin: auto;
     }
-
 }
