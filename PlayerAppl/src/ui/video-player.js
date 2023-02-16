@@ -13,8 +13,16 @@ export class VideoPlayer {
     getUrl(playData){
         this.#videoElement.src = playData[1];
     }
+    // async startPlayer(){
+    //     try{
+    //     await this.#videoElement.play();
+    //     } catch(e){
+    //         alert(`wrong ${e}`)
+    //     }
+    // }
+
     startPlayer(){
-        this.#videoElement.play();
+        this.#videoElement.play().catch(e => (alert(`wrong ${e}`)));
     }
     stopPlayer(){
         this.#videoElement.pause();
